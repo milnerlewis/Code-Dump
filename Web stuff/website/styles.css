@@ -1,20 +1,28 @@
-body{
-    background-color: yellow;
-    font-family: Verdana;
-    }
+body {
+    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
 
-
-
-h1{
-    background-color: lightblue;
+h1 {
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    }
+    padding: 20px 0;
+    margin: 0;
+    font-size: 2.5em;
+}
 
-
-
-p{
-    background-color: limegreen;
-    color: #7e2adc;
-    font-size: 200px;
+p {
+    background-color: #fff;
+    color: #333;
+    font-size: 1.2em;
     text-align: center;
-    }
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
