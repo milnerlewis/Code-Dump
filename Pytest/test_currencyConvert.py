@@ -10,9 +10,12 @@ def currencyConvert(value):
         usd = round((gbp * 1.23), 2)
         return usd
     
+@pytest.mark.parametrize("value, expected", [
+    ("", False),
+    ("£1", False),
+    (1, 1.23),
+    (13.28, 16.33)
+])
+
 def test_convert():
-    assert currencyConvert("") == False
-    assert currencyConvert("£1") == False
-    assert currencyConvert("1") == 1.23
-    assert currencyConvert(1) == 1.23
-    assert currencyConvert(13.28) == 16.33
+    assert currencyConvert(value) == expected
