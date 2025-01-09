@@ -10,7 +10,7 @@ def currencyConvert(value):
         usd = round((gbp * 1.23), 2)
         return usd
     
-@pytest.mark.parametrize("value, expected", [
+@pytest.mark.parametrize("parVal, parRes", [
     ("", False),
     ("£1", False),
     (1, 1.23),
@@ -18,4 +18,4 @@ def currencyConvert(value):
 ])
 
 def test_convert():
-    assert currencyConvert(value) == expected
+    assert currencyConvert(parVal) == parRes
