@@ -3,6 +3,6 @@ import time
 
 num = 3
 
-while "y" == "y":
+while True:
     print([[random.randint(0,9)] * 1 for a in range(num)])
-    time.sleep(1)
+    time.sleep(0.05)
