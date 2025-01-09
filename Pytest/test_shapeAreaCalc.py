@@ -5,19 +5,57 @@ import pytest
 
 
 def circle(radius):
-    return 3.14 * (radius ** 2)
+    try:
+        float(radius)
+
+    except:
+        return False
+    
+    else:
+        return 3.14 * (radius ** 2)
 
 def square(side):
-    return side ** 2
+    try:
+        float(side)
+
+    except:
+        return False
+    
+    else:
+        return side ** 2
 
 def rectangle(length, width):
-    return length * width
+    try:
+        float(length)
+        float(width)
 
-def parollogram(base, height):
-    return base * height
+    except:
+        return False
+    
+    else:
+        return length * width
+
+def parollelogram(base, height):
+    try:
+        float(base)
+        float(height)
+    
+    except:
+        return False
+    
+    else:
+        return base * height
 
 def triangle(base, height):
-    return 0.5 * base * height
+    try:
+        float(base)
+        float(height)
+    
+    except:
+        return False
+    
+    else:
+        return 0.5 * base * height
 
 
 # Testing functions
@@ -26,19 +64,24 @@ def triangle(base, height):
 def test_circle():
     assert circle(5) == 78.5
     assert circle(10) == 314
+    assert circle(0) == 0
 
 def test_square():
     assert square(5) == 25
     assert square(10) == 100
+    assert square(0) == 0
 
 def test_rectangle():
     assert rectangle(5, 10) == 50
     assert rectangle(10, 10) == 100
+    assert rectangle(1,0) == 0
 
-def test_parollogram():
-    assert parollogram(5, 10) == 50
-    assert parollogram(10, 10) == 100
+def test_parollelogram():
+    assert parollelogram(5, 10) == 50
+    assert parollelogram(10, 10) == 100
+    assert parollelogram(1,0) == 0
 
 def test_triangle():
     assert triangle(5, 10) == 25
     assert triangle(10, 10) == 50
+    assert triangle(1, 0) == 0
