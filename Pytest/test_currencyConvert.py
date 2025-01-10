@@ -10,6 +10,7 @@ def currencyConvert(value):
         usd = round((gbp * 1.23), 2)
         return usd
     
+    
 @pytest.mark.parametrize("parVal, parExp", [
     (1, 1.23),
     (0, 0),
