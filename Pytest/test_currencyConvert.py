@@ -20,3 +20,5 @@ def currencyConvert(value):
 
 def test_currencyConvert(parVal, parExp):
     assert currencyConvert(parVal) == parExp
+
+    
