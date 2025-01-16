@@ -40,6 +40,8 @@ while "y" in gameContinue:
 
     while False == gameOver:
 
+        totalGuess = 0
+
         validGuess = "n"
 
         # # # # # Player One
@@ -48,11 +50,13 @@ while "y" in gameContinue:
 
         while validGuess == "n":
 
+            print(boardToStr(boardValues))
+
             rowGuess = input("\nWhat row would you like to guess x(1-3)? ")
 
             columnGuess = input("\nWhat column would you like to guess x(1-3)? ")
 
-            if guessValidation(rowGuess, columnGuess) == False:
+            if guessValidation(rowGuess, columnGuess) == False or boardValues[int(columnGuess) - 1][int(rowGuess) - 1] == "X" or boardValues[int(columnGuess) - 1][int(rowGuess) - 1] == "O":
                     
                 print("\n\nThe guess was not valid.")
                 validGuess = "n"
@@ -63,16 +67,12 @@ while "y" in gameContinue:
 
                 validGuess = "y"
 
-                boardValues[int(rowGuess) - 1][int(columnGuess) - 1] = "X"
+                totalGuess += 1
 
-        print(boardToStr(boardValues))
+                boardValues[int(columnGuess) - 1][int(rowGuess) - 1] = "X"
 
         # # # # # End of Player One
-        print( "\nboardValues[0].count('X')", boardValues[0].count('X'))
 
-        lRow1 = [boardValues[i][0] for i in range(3)]
-
-        print("\nlRow1", lRow1)
         if ((boardValues[0][0] == "X" and boardValues[0][1] == "X" and boardValues[0][2] == "X") or
             (boardValues[1][0] == "X" and boardValues[1][1] == "X" and boardValues[1][2] == "X") or
             (boardValues[2][0] == "X" and boardValues[2][1] == "X" and boardValues[2][2] == "X") or
@@ -93,12 +93,14 @@ while "y" in gameContinue:
         validGuess = "n"
 
         while validGuess == "n":
+
+            print(boardToStr(boardValues))
         
-            rowGuess = input("\nWhat row would you like to guess(1-3)? ")
+            rowGuess = input("\nWhat row would you like to select (1-3)? ")
 
-            columnGuess = input("\nWhat column would you like to guess (1-3)? ")
+            columnGuess = input("\nWhat column would you like to select (1-3)? ")
 
-            if guessValidation(rowGuess, columnGuess) == False:
+            if guessValidation(rowGuess, columnGuess) == False or boardValues[int(columnGuess) - 1][int(rowGuess) - 1] == "X" or boardValues[int(columnGuess) - 1][int(rowGuess) - 1] == "O":
                         
                 print("\n\n\nThe guess was not valid.")
                 validGuess = "n"
@@ -108,9 +110,10 @@ while "y" in gameContinue:
                 columnGuess = int(columnGuess)
 
                 validGuess = "y"
-                boardValues[int(rowGuess) - 1][int(columnGuess) - 1] = "O"
 
-        print(boardToStr(boardValues))
+                totalGuess += 1
+
+                boardValues[int(columnGuess) - 1][int(rowGuess) - 1] = "O"
 
         if ((boardValues[0][0] == "O" and boardValues[0][1] == "O" and boardValues[0][2] == "O") or
             (boardValues[1][0] == "O" and boardValues[1][1] == "O" and boardValues[1][2] == "O") or
@@ -123,6 +126,8 @@ while "y" in gameContinue:
 
                 gameOver = True
 
+                print(boardToStr(boardValues))
+
                 print("\n\n\nPlayer 2 has won!!")
 
                 gameContinue = input("\nWould you like to play again (y/n)? ")
@@ -130,6 +135,16 @@ while "y" in gameContinue:
                 gameContinue = gameContinue.lower()
 
                 continue
+        
+        if totalGuess == 9:
+
+            gameOver = True
+
+            print("\n\n\nThe game is a tie!!")
+
+            gameContinue = input("\nWould you like to play again (y/n)? ")
+
+            gameContinue = gameContinue.lower()
         
     if "n" in gameContinue:
                   
