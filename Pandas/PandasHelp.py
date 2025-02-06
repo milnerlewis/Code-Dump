@@ -9,9 +9,22 @@ data = {'Name': ['Tom', 'Jerry', 'Mickey', 'Minnie', 'Donald', 'Daisy', 'Goofy',
 df = pd.DataFrame(data)
 
 # Print DataFrame
-print(df)
+print(df, "\n\n\nRow Select:\n")
 
 # Select rows
-print(f"Row 1: {df.loc[0]}")
-print(f"Row 2: {df.loc[1]}")
-print(f"Row 3: {df.loc[2]}")
+selectRow1 = df.loc[0]
+selectRow2 = df.loc[1]
+selectRow3 = df.loc[2]
+
+print(f"Row 1:\n{selectRow1}\n")
+print(f"Row 2:\n{selectRow2}\n")
+print(f"Row 3:\n{selectRow3}\n")
+
+
+# Slice data
+selectedColumns = df.loc[:, ['Name', 'City']]
+print("\nColumn select:\n", selectedColumns)
+
+
+# GroupBy - Average age by town:
+#print(df.groupby(['City']).mean())
