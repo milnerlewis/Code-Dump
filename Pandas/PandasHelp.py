@@ -12,5 +12,6 @@ df = pd.DataFrame(data)
 print(df)
 
 # Select rows
-for i in range(0, len(df)):
-    print(f"Row {i}: {df.loc[i]}")
+print(f"Row 1: {df.loc[0]}")
+print(f"Row 2: {df.loc[1]}")
+print(f"Row 3: {df.loc[2]}")
