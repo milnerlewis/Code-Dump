@@ -2,7 +2,7 @@ import pandas as pd
 
 # Create data array
 data = {'Name': ['Tom', 'Jerry', 'Mickey', 'Minnie', 'Donald', 'Daisy', 'Goofy', 'Pluto'],
-        'Age': [10, 20, 30, 40],
+        'Age': [18, 35, 28, 45, 50, 30, 29, 35],
         'City': ['Sheffield', 'London', 'Manchester', 'Birmingham', 'Sheffield', 'London', 'Manchester', 'Sheffield']}
 
 # Create DataFrame
